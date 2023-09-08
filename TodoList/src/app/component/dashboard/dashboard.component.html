@@ -1,0 +1,36 @@
+<div class="container-fluid bg-light">
+    <div class="container bg-light">
+        <div class="row mt-4">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card mt-4 shadow">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">To-Do List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Add a new task" name="task" [(ngModel)]="addTaskValue">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="button" (click)="addTask"> Add</button>
+                            </div>
+                        </div>
+                        <ul class="list-group">
+                            <!-- Your to-do list items will go here -->
+                            <li class="list-group-item" *ngFor = "let task of taskArr">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    {{task.task_name}}
+                                    <div>
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button class="btn btn-sm btn-primary">Edit</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- Repeat this list item structure for each task -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>
